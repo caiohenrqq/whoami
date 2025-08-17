@@ -1,0 +1,22 @@
+---
+const navbarLinks = [
+    { href: "#experience", label: "/experience" },
+    { href: "#projects", label: "/projects" },
+    { href: "#contact", label: "/contact" },
+];
+---
+
+<header class="font-bold tracking-wider w-full pt-10">
+    <nav class="container flex justify-between items-center">
+        <a href="/" class="hover:text-accent transition-colors">
+            /whoami
+        </a>
+        <div class="hidden sm:flex items-center space-x-6">
+            {navbarLinks.map(link => (
+                <a href={link.href} class="text-sm hover:text-accent transition-colors">
+                    {link.label}
+                </a>
+            ))}
+        </div>
+    </nav>
+</header>
