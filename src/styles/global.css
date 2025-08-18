@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&family=PT+Serif:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -30,12 +30,49 @@
     }
     
     body { 
-        @apply bg-background text-text font-body antialiased; 
+        @apply bg-background text-text font-body antialiased;
     }
 }
 
 @layer utilities{
     .container { 
-        @apply mx-auto w-full max-w-3xl px-4; 
+        @apply mx-auto w-full max-w-3xl; 
+    }
+    
+    .border {
+        @apply border-b-0 border-gray-700;
+    }
+    
+    .cursor-spotlight {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: 
+            repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 24px),
+            repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 24px);
+        background-size: 24px 24px;
+        mask-image: radial-gradient(
+            circle 120px at var(--x, 50%) var(--y, 50%), 
+            white 70%, 
+            transparent 100%
+        );
+        -webkit-mask-image: radial-gradient(
+            circle 120px at var(--x, 50%) var(--y, 50%), 
+            white 70%, 
+            transparent 150%
+        );
+    }
+    
+    .cursor-ball {
+        transition: transform 0.2s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--color-text);
+        pointer-events: none;
+        transform: translate(-50%, -50%);
     }
 }

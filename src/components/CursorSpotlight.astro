@@ -1,0 +1,13 @@
+<div class="cursor-spotlight" />
+
+<script is:inline>
+    (function () {
+        const cursorSpotlight = document.querySelector('.cursor-spotlight');
+        if (!cursorSpotlight) return;
+        
+        window.addEventListener('mousemove', (event) => {
+            cursorSpotlight.style.setProperty('--x', event.clientX + 'px');
+            cursorSpotlight.style.setProperty('--y', event.clientY + 'px');
+        }, { passive: true });
+    })();
+</script>

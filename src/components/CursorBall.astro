@@ -1,0 +1,11 @@
+<div class="cursor-ball" />
+
+<script is:inline>
+    const cursorBall = document.querySelector('.cursor-ball');
+    
+    if (cursorBall) {
+        window.addEventListener('mousemove', (event) => {
+            cursorBall.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        });
+    }
+</script>
