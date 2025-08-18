@@ -1,6 +1,12 @@
 ---
 import Navbar from "@components/Navbar.astro";
 import "../styles/global.css";
+import CursorSpotlight from "@components/CursorSpotlight.astro";
+import CursorBall from "@components/CursorBall.astro";
+import SmoothScroll from "@components/SmoothScroll";
+import RevealOnScroll from "@components/RevealOnScroll";
+import ScrollArrow from "@components/ScrollArrow";
+import Footer from "@components/Footer.astro";
 
 interface Props {
     title: string;
@@ -19,7 +25,13 @@ const { title } = Astro.props;
 		<title>{title}</title>
     </head>
     <body>
+        <SmoothScroll client:load />
+        <RevealOnScroll client:load />
+        <CursorSpotlight />
+        <CursorBall />
         <Navbar />
         <slot />
+        <ScrollArrow client:load/>
+        <Footer />
     </body>
 </html>

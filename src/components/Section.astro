@@ -1,12 +1,15 @@
 ---
 interface Props {
 	title: string;
+    id?: string;
 }
-const { title } = Astro.props;
+
+const { title, id } = Astro.props;
 ---
 
-<section class="mb-16 border border-white/10 rounded-lg p-8 bg-primary">
+<section id={id} class="my-15 reveal text-base/relaxed">
 	<h2 class="font-heading text-3xl font-bold mb-6">{title}</h2>
 	<div>
-		<slot /> </div>
+		<slot /> 
+    </div>
 </section>

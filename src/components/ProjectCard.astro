@@ -1,0 +1,76 @@
+---
+import { FaGithub, FaExternalLinkSquareAlt } from "react-icons/fa";
+
+interface Props {
+  title: string;
+  start: string;
+  end: string;
+  description: string;
+  technologies: string[];
+  repository: string;
+  website?: string;
+  sample: string[];
+}
+
+const {
+  title,
+  start,
+  end,
+  description,
+  technologies,
+  sample,
+  repository,
+  website,
+} = Astro.props;
+---
+
+<div class="my-6 block">
+  <div class="mb-2 flex items-center justify-between">
+    <h3 class="font-heading text-xl font-bold">{title}</h3>
+
+    <div class="flex items-center gap-3">
+      {
+        repository && (
+          <a
+            href={repository}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open GitHub repository"
+            class="group inline-flex items-center transition-colors focus:ring-2 hover:text-accent/80 text-xl"
+            title="GitHub repository"
+          >
+            <FaGithub />
+          </a>
+        )
+      }
+
+      {
+        website && (
+          <a
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open live website"
+            class="group inline-flex items-center transition-colors hover:text-accent/80 text-xl"
+            title="Live website"
+          >
+            <FaExternalLinkSquareAlt />
+          </a>
+        )
+      }
+    </div>
+  </div>
+  <p class="mb-2 text-text/50">{start} – {end}</p>
+
+  <p class="text-text/70 mb-4 text-sm">{description}</p>
+
+  <div class="flex flex-wrap gap-2">
+    {
+      technologies.map((tech) => (
+        <span class="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded-full">
+          {tech}
+        </span>
+      ))
+    }
+  </div>
+</div>

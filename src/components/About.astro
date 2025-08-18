@@ -1,13 +1,38 @@
 ---
-import SocialLinks from './SocialLinks.astro';
+import SocialLinks from "./SocialLinks.astro";
 ---
 
-<div class="mx-auto mt-10">
-	<h1 class="font-heading text-3xl font-bold">
-        about
-    </h1>
-	<p class="font-body mt-6 max-w-xl">
-		A passionate developer based in Brazil, with a knack for building and sometimes breaking things. Currently exploring the depths of modern web technologies.
-	</p>
-	<SocialLinks />
+<div class="space-y-4 text-base/relaxed">
+  <p
+    class="font-body inline-block max-w-xl bg-highlight text-primary px-1 font-bold select-none"
+  >
+    - hey, nice to meet you!
+  </p>
+  <p>
+    I'm Caio Henrique, a brazilian software developer with over two years of
+    experience. Currently, Full Stack Developer at <a
+      href="https://buscasim.com.br/"
+      class="transition-colors inline-block px-1 bg-highlight font-bold text-primary hover:bg-accent hover:text-text"
+      target="_blank">BuscaSim</a
+    >.
+  </p>
+  <p>
+    I really love tech & coding, and I'm always looking for new challenges to
+    improve my skills and knowledge.
+  </p>
+  <SocialLinks />
+  <div class="border"></div>
+  <div class="flex flex-col items-center">
+    <svg
+      viewBox="0 0 24 24"
+      class="scroll-arrow h-10 w-10"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M6 9l6 6 6-6"></path>
+    </svg>
+  </div>
 </div>
