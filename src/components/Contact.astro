@@ -1,10 +1,52 @@
 ---
-import SocialLinks from './SocialLinks.astro';
+import SocialLinks from "./SocialLinks.astro";
 ---
 
-<div class="text-center min-h-[50vh] flex flex-col items-center justify-center gap-8">
+<div
+  class="text-center min-h-[50vh] md:min-h-[70vh] flex flex-col items-center justify-center gap-8"
+>
   <p class="text-xl text-text max-w-2xl">
-    If you have any questions or just want to say hello, feel free to reach out!
+    Let's build something <span class="contact-typed-phrase inline-block whitespace-nowrap"
+    ></span>together!
   </p>
   <SocialLinks />
 </div>
+
+<script>
+  import Typed from "typed.js";
+
+  if (typeof window !== "undefined") {
+    const amazingVariations = [
+      "amazing",
+      "increíble",
+      "incroyable",
+      "unglaublich",
+      "驚くばかり",
+      "maravilhoso",
+      "fantástico",
+      "офигенно",
+      "خارق",
+      "extraordinário",
+      "素晴らしい",
+      "놀라운",
+      "惊人",
+      "incredibile",
+      "fantastisch",
+      "أروع",
+      "удивительный",
+      "astonishing",
+      "magnifique",
+      "espetacular", 
+    ];
+
+    new Typed(".contact-typed-phrase", {
+      strings: amazingVariations.sort(() => Math.random() - 0.5),
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 1500,
+      loop: true,
+      showCursor: true,
+      cursorChar: "|",
+    });
+  }
+</script>

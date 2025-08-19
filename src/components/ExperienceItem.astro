@@ -1,17 +1,26 @@
 ---
 interface Props {
-    id?: string;
-    title: string;
-    company: string;
-    start: string;
-    end: string;
-    location?: string;
-    description?: string;
-    responsibilities?: string[];
-    technologies?: string[];   
+	id?: string;
+	title: string;
+	company: string;
+	start: string;
+	end: string;
+	location?: string;
+	description?: string;
+	responsibilities?: string[];
+	technologies?: string[];
 }
 
-const { title, company, start, end, location, description, responsibilities, technologies } = Astro.props;
+const {
+	title,
+	company,
+	start,
+	end,
+	location,
+	description,
+	responsibilities,
+	technologies,
+} = Astro.props;
 ---
 
 <div class="my-6">

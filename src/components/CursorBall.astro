@@ -1,11 +1,13 @@
-<div class="cursor-ball" />
+<div class="cursor-ball hidden md:block"></div>
 
 <script is:inline>
+  if (window.innerWidth >= 768) {
     const cursorBall = document.querySelector('.cursor-ball');
     
     if (cursorBall) {
-        window.addEventListener('mousemove', (event) => {
-            cursorBall.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
-        });
+      window.addEventListener('mousemove', (event) => {
+        cursorBall.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+      });
     }
+  }
 </script>

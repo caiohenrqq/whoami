@@ -1,26 +1,26 @@
 ---
-import { FaGithub, FaExternalLinkSquareAlt } from "react-icons/fa";
+import { FaExternalLinkSquareAlt, FaGithub } from "react-icons/fa";
 
 interface Props {
-  title: string;
-  start: string;
-  end: string;
-  description: string;
-  technologies: string[];
-  repository: string;
-  website?: string;
-  sample: string[];
+	title: string;
+	start: string;
+	end: string;
+	description: string;
+	technologies: string[];
+	repository: string;
+	website?: string;
+	sample: string[];
 }
 
 const {
-  title,
-  start,
-  end,
-  description,
-  technologies,
-  sample,
-  repository,
-  website,
+	title,
+	start,
+	end,
+	description,
+	technologies,
+	sample,
+	repository,
+	website,
 } = Astro.props;
 ---
 
@@ -62,7 +62,7 @@ const {
   </div>
   <p class="mb-2 text-text/50">{start} – {end}</p>
 
-  <p class="text-text/70 mb-4 text-sm">{description}</p>
+  <p class="text-text/90 mb-4 text-sm">{description}</p>
 
   <div class="flex flex-wrap gap-2">
     {

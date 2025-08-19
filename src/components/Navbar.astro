@@ -1,19 +1,19 @@
 ---
 const navbarLinks = [
-    { href: "#experience", label: "/experience" },
-    { href: "#projects", label: "/projects" },
-    { href: "#contact", label: "/contact" },
+	{ href: "#experience", label: "/experience" },
+	{ href: "#projects", label: "/projects" },
+	{ href: "#contact", label: "/contact" },
 ];
 ---
 
-<header class="font-bold tracking-wider w-full pt-10">
+<header class="font-bold tracking-wider w-full pt-10 pl-5 pr-5 md:pl-0 md:pr-0">
     <nav class="container flex justify-between items-center">
-        <a href="/" class="hover:text-accent transition-colors">
+        <a href="/" class="text-xs sm:text-sm hover:text-accent transition-colors">
             /whoami
         </a>
-        <div class="hidden sm:flex items-center space-x-6">
+        <div class="flex items-center space-x-3 sm:space-x-6">
             {navbarLinks.map(link => (
-                <a href={link.href} class="text-sm hover:text-accent transition-colors">
+                <a href={link.href} class="text-[0.6rem] sm:text-sm hover:text-accent transition-colors">
                     {link.label}
                 </a>
             ))}

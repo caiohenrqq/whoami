@@ -1,27 +1,32 @@
 ---
-import { FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const socialLinks = [
-    {
-        href: "https://github.com/caiohenrqq",
-        label: "GitHub",
-        icon: FaGithub,
-    },
-    {
-        href: "https://linkedin.com/in/caiohenrqq",
-        label: "LinkedIn",
-        icon: FaLinkedin,
-    },
-    {
-        href: "https://wa.me/5569992974079",
-        label: "WhatsApp",
-        icon: FaWhatsapp,
-    },
-    {
-        href: "mailto:caiohenrqq.profissional@gmail.com",
-        label: "Email",
-        icon: FaEnvelope,
-    },
+	{
+		href: "https://github.com/caiohenrqq",
+		label: "GitHub",
+		icon: FaGithub,
+	},
+	{
+		href: "https://linkedin.com/in/caiohenrqq",
+		label: "LinkedIn",
+		icon: FaLinkedin,
+	},
+	{
+		href: "https://drive.google.com/file/d/1vrx7sXbfEBBdil0GLqvwXyId2Xwt9QXY/view",
+		label: "CV",
+		icon: "CV",
+	},
+	{
+		href: "https://wa.me/5569992974079",
+		label: "WhatsApp",
+		icon: FaWhatsapp,
+	},
+	{
+		href: "mailto:caiohenrqq.profissional@gmail.com",
+		label: "Email",
+		icon: FaEnvelope,
+	},
 ];
 ---
 
@@ -35,7 +40,11 @@ const socialLinks = [
         class="text-text/70 hover:text-accent transition-colors"
         aria-label={label}
       >
-        <Icon size={24} className="mx-1 my-2"/>
+        {typeof Icon === "string" ? (
+          <span class="font-bold text-lg">{Icon}</span>
+        ) : (
+          <Icon size={24} className="mx-1 my-2" />
+        )}
       </a>
     ))
   }

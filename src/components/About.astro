@@ -6,7 +6,8 @@ import SocialLinks from "./SocialLinks.astro";
   <p
     class="font-body inline-block max-w-xl bg-highlight text-primary px-1 font-bold select-none"
   >
-    - hey, nice to meet you!
+    <span class="about-typed-greeting"></span>
+    <span class="invisible" aria-hidden="true"></span>
   </p>
   <p>
     I'm Caio Henrique, a brazilian software developer with over two years of
@@ -20,7 +21,9 @@ import SocialLinks from "./SocialLinks.astro";
     I really love tech & coding, and I'm always looking for new challenges to
     improve my skills and knowledge.
   </p>
-  <SocialLinks />
+  <div class="flex justify-center mb-5">
+    <SocialLinks />
+  </div>
   <div class="border"></div>
   <div class="flex flex-col items-center">
     <svg
@@ -36,3 +39,43 @@ import SocialLinks from "./SocialLinks.astro";
     </svg>
   </div>
 </div>
+
+<script>
+  import Typed from "typed.js";
+
+  const greetingsVariations = [
+    "- hey, nice to meet you!",
+    "- prazer em te conhecer!",
+    "- ¡encantado de conocerte!",
+    "- ravi de vous rencontrer !",
+    "- schön, dich kennenzulernen!",
+    "- piacere di conoscerti!",
+    "- приятно познакомиться!",
+    "- مرحبًا، تشرفتُ بمعرفتك!",
+    "- こんにちは、はじめまして！",
+    "- 안녕하세요, 만나서 반가워요!",
+    "- 很高兴认识你!",
+    "- 很高興認識你!",
+    "- приятно вас встретить!",
+    "- glædeligt at møde dig!",
+    "- leuk je te ontmoeten!",
+    "- encantado de o conhecer!",
+    "- senang bertemu denganmu!",
+    "- sangat senang bertemu dengan Anda!",
+    "- приятно се запознахме!",
+    "- приятно да се запознаем!",
+  ];
+
+  if (typeof window !== "undefined") {
+    new Typed(".about-typed-greeting", {
+      strings: greetingsVariations.sort(() => Math.random() - 0.5),
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 1500,
+      smartBackspace: true,
+      loop: true,
+      showCursor: true,
+      cursorChar: "|",
+    });
+  }
+</script>
