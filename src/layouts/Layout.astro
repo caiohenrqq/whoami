@@ -8,6 +8,7 @@ import RevealOnScroll from "@components/RevealOnScroll";
 import ScrollArrow from "@components/ScrollArrow";
 import SmoothScroll from "@components/SmoothScroll";
 import Squares from "@/blocks/Backgrounds/Squares/Squares";
+import Analytics from '@vercel/analytics/astro'
 
 interface Props {
 	title: string;
@@ -26,13 +27,14 @@ const { title } = Astro.props;
 		<title>{title}</title>
     </head>
     <body>
-        <Squares 
-            client:load 
-            direction="diagonal" 
-            speed={0.15} 
-            squareSize={40} 
-            borderColor="#2a2a2a" 
-            hoverFillColor="rgba(255,255,255,0" 
+        <Analytics />
+        <Squares
+            client:load
+            direction="diagonal"
+            speed={0.15}
+            squareSize={40}
+            borderColor="#2a2a2a"
+            hoverFillColor="rgba(255,255,255,0"
         />
         <SmoothScroll client:load />
         <CursorBall />
