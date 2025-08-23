@@ -1,0 +1,121 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Contact from "@components/Contact.astro";
+import Section from "@components/Section.astro";
+---
+
+<Layout title="Journey">
+  <div class="container">
+    <Section title="Journey" id="journey">
+      <article
+        class="prose prose-invert max-w-none
+               prose-p:leading-7 md:prose-p:leading-8
+               tracking-[0.01em] md:tracking-[0.015em]
+               [&>*]:mb-6"
+      >
+        <p
+          class="first-letter:text-4xl first-letter:font-bold first-letter:mr-2 first-letter:float-left first-letter:leading-none first-line:tracking-wide"
+        >
+          My name is Caio Henrique de Oliveira Santana, born and raised in
+          Ji-Paraná, a city in the interior of Rondônia, Brazil. Growing up here
+          meant being far from the large tech centers, but it also shaped me
+          into someone resourceful and persistent. With limited access to
+          opportunities, I had to teach myself most of the things that sparked
+          my curiosity.
+        </p>
+
+        <p>
+          My teenage years were marked by challenges that went far beyond school
+          and computers. Between the ages of fifteen and twenty, I was forced to
+          confront two different cancers. Those years changed me completely. The
+          hospital became a second home, and discipline wasn’t just a good
+          habit—it was survival. The experience left me resilient, patient, and
+          unwilling to give up, no matter the size of the obstacle.
+        </p>
+
+        <p>
+          Despite these difficulties, I always felt drawn to technology. Even
+          when my math education in school wasn’t solid, I refused to let that
+          stop me. I spent hours learning programming by myself, building small
+          projects, breaking things, and then fixing them. That habit of
+          learning by doing became the foundation of who I am as a developer
+          today.
+        </p>
+
+        <div class="h-px bg-neutral-200"></div>
+
+        <p>
+          Over time, I evolved from experimenting with simple websites to
+          building complete systems. I became comfortable with React and
+          TypeScript on the frontend and Laravel with MySQL on the backend. I
+          pushed myself to understand how things actually work under the
+          surface: SQL queries, algorithms, data structures, HTTP. I believe
+          strong fundamentals matter more than flashy frameworks, and I keep
+          coming back to that idea.
+        </p>
+
+        <p>
+          Professionally, I grew into a full-stack role at BuscaSim, a platform
+          with hundreds of thousands of daily users. I built features that
+          actually moved the needle, like a flow-based A/B testing engine that
+          gave the company a new level of flexibility, and an integration layer
+          that connected multiple external APIs using a strategy-pattern
+          architecture. Seeing my work impact real users and measurable results
+          taught me the true meaning of responsibility in software engineering.
+        </p>
+
+        <div class="h-px bg-neutral-200"></div>
+
+        <p>
+          At the same time, I’ve been pursuing my Bachelor’s in Computer
+          Science. Studying formally has helped me fill the gaps I left behind
+          during my teenage years, especially in mathematics and computer
+          science fundamentals. Today, I study subjects like discrete math,
+          algorithms, and database design, not just to pass exams but to build
+          the solid foundation I want for my career.
+        </p>
+
+        <p>
+          Outside work and study, I’ve never lost the love for games. As a
+          teenager, I dreamed of becoming a professional CS:GO or Fortnite
+          player. It didn’t happen, but that drive to compete and improve found
+          a new outlet in coding. I now approach programming with the same
+          passion I once had for esports—driven, curious, and never satisfied
+          with being average.
+        </p>
+
+        <div class="h-px bg-neutral-200"></div>
+
+        <p>
+          Today, I balance my time between working, studying, and rebuilding my
+          physical health after years of treatment. I have a structured routine
+          for fitness, nutrition, and sleep. It’s not about extremes—it’s about
+          consistency, just like coding. Every day I push a little further,
+          whether that’s in my body, my mind, or my projects.
+        </p>
+
+        <p>
+          My story is not just about code. It’s about resilience, persistence,
+          and choosing to create even when the odds are against me. From a small
+          city in Rondônia to building large-scale systems for real companies,
+          I’ve proven to myself that limitations can become fuel. And I know
+          that this is just the beginning.
+        </p>
+      </article>
+    </Section>
+  </div>
+  <div class="flex flex-col items-center">
+    <svg
+      viewBox="0 0 24 24"
+      class="scroll-arrow h-10 w-10"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M6 9l6 6 6-6"></path>
+    </svg>
+  </div>
+  <Contact />
+</Layout>
