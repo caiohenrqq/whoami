@@ -1,13 +1,18 @@
-<div class="cursor-ball hidden md:block"></div>
+<div class="cursor-ball hidden md:block" />
 
 <script is:inline>
-  if (window.innerWidth >= 768) {
+  const handleMouseMove = (event) => {
     const cursorBall = document.querySelector('.cursor-ball');
-    
     if (cursorBall) {
-      window.addEventListener('mousemove', (event) => {
-        cursorBall.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
-      });
+      cursorBall.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
     }
-  }
+  };
+
+  const initCursorBall = () => {
+    window.removeEventListener('mousemove', handleMouseMove);
+
+    if (window.innerWidth >= 768) window.addEventListener('mousemove', handleMouseMove);
+  };
+
+  document.addEventListener('astro:page-load', initCursorBall);
 </script>
