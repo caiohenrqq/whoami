@@ -6,7 +6,8 @@ import SocialLinks from "./SocialLinks.astro";
   class="text-center min-h-[50vh] md:min-h-[70vh] flex flex-col items-center justify-center gap-8"
 >
   <p class="text-xl text-text max-w-2xl">
-    Let's build something <span class="contact-typed-phrase inline-block whitespace-nowrap"
+    Let's build something <span
+      class="contact-typed-phrase inline-block whitespace-nowrap"
     ></span>together!
   </p>
   <SocialLinks />
@@ -36,17 +37,30 @@ import SocialLinks from "./SocialLinks.astro";
       "удивительный",
       "astonishing",
       "magnifique",
-      "espetacular", 
+      "espetacular",
     ];
 
-    new Typed(".contact-typed-phrase", {
-      strings: amazingVariations.sort(() => Math.random() - 0.5),
-      typeSpeed: 50,
-      backSpeed: 25,
-      backDelay: 1500,
-      loop: true,
-      showCursor: true,
-      cursorChar: "|",
-    });
+    let contactTypedInstance: Typed | null =  null;
+
+    function initContactTypedAnimation() {
+      if (contactTypedInstance) contactTypedInstance.destroy();
+
+      const contactTypePhrase = document.querySelector(".contact-typed-phrase");
+      if (contactTypePhrase) {
+        contactTypedInstance = new Typed(".contact-typed-phrase", {
+          strings: amazingVariations.sort(() => Math.random() - 0.5),
+          typeSpeed: 50,
+          backSpeed: 25,
+          backDelay: 1500,
+          loop: true,
+          showCursor: true,
+          cursorChar: "|",
+        });
+      }
+    }
+
+    initContactTypedAnimation();
+
+    document.addEventListener("astro:after-swap", initContactTypedAnimation);
   }
 </script>

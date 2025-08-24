@@ -83,16 +83,27 @@ import SocialLinks from "./SocialLinks.astro";
     "- приятно да се запознаем!",
   ];
 
-  if (typeof window !== "undefined") {
-    new Typed(".about-typed-greeting", {
-      strings: greetingsVariations.sort(() => Math.random() - 0.5),
-      typeSpeed: 50,
-      backSpeed: 25,
-      backDelay: 1500,
-      smartBackspace: true,
-      loop: true,
-      showCursor: true,
-      cursorChar: "|",
-    });
+  let typedInstance: Typed | null = null;
+
+  function initTypedAnimation() {
+    if (typedInstance) typedInstance.destroy();
+
+    const aboutTypedGreeting = document.querySelector(".about-typed-greeting");
+    if (aboutTypedGreeting) {
+      typedInstance = new Typed(".about-typed-greeting", {
+        strings: greetingsVariations.sort(() => Math.random() - 0.5),
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 1500,
+        smartBackspace: true,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+    }
   }
+
+  initTypedAnimation();
+
+  document.addEventListener("astro:after-swap", initTypedAnimation);
 </script>
