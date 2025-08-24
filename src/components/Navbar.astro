@@ -2,67 +2,85 @@
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navbarLinks = [
-  { href: "/journey", label: "/journey"},
+  { href: "journey", label: "/journey" },
   { href: "#experience", label: "/experience" },
   { href: "#projects", label: "/projects" },
   { href: "#contact", label: "/contact" },
 ];
+
+const urlSlugNow =
+  Astro.url.pathname.split("/").filter(Boolean).pop() ?? "home";
+
+const isAtJourneySection = urlSlugNow === "journey";
 ---
 
 <header class="font-bold tracking-wider w-full pt-10 pl-5 pr-5 md:pl-0 md:pr-0">
-  <nav class="container flex justify-between items-center">
+  <nav
+    class={`container flex items-center ${
+      isAtJourneySection ? "justify-center" : "justify-between"
+    }`}
+  >
     <a href="/" class="text-xs sm:text-sm hover:text-accent transition-colors">
       /whoami
     </a>
 
     <!-- Desktop -->
-    <div class="hidden md:flex items-center space-x-3 sm:space-x-6">
-      {
-        navbarLinks.map((link) => (
-          <a
-            href={link.href}
-            class="text-[0.6rem] sm:text-sm hover:text-accent transition-colors"
-          >
-            {link.label}
-          </a>
-        ))
-      }
-    </div>
-
-    <!-- Mobile toggle menu button -->
-    <button
-      id="menu-navbar-mobile-toggle"
-      class="md:hidden p-2 rounded focus:outline-none"
-      aria-label="Toggle navbar menu"
-      aria-expanded="false"
-      data-open="false"
-    >
-      <HiMenu className="h-6 w-6 block [data-open='true']:hidden" />
-      <HiX className="h-6 w-6 hidden [data-open='true']:block" />
-    </button>
-  </nav>
-
-  <!-- Mobile menu-->
-  <div id="mobile-navbar-menu" class="md:hidden hidden mt-2 origin-top">
-    <ul class="flex flex-col gap-4 p-4">
-      {
-        navbarLinks.map((link) => (
-          <li>
+    {
+      !isAtJourneySection && (
+        <div class="hidden md:flex items-center space-x-3 sm:space-x-6">
+          {navbarLinks.map((link) => (
             <a
               href={link.href}
-              class="block py-1 text-sm hover:text-accent transition-colors"
+              class="text-[0.6rem] sm:text-sm hover:text-accent transition-colors"
             >
               {link.label}
             </a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Mobile toggle menu button -->
+    {
+      !isAtJourneySection && (
+        <button
+          id="menu-navbar-mobile-toggle"
+          class="md:hidden p-2 rounded focus:outline-none"
+          aria-label="Toggle navbar menu"
+          aria-expanded="false"
+          data-open="false"
+        >
+          <HiMenu className="h-6 w-6 block [data-open='true']:hidden" />
+          <HiX className="h-6 w-6 hidden [data-open='true']:block" />
+        </button>
+      )
+    }
+  </nav>
+
+  <!-- Mobile menu-->
+  {
+    !isAtJourneySection && (
+      <div id="mobile-navbar-menu" class="md:hidden hidden mt-2 origin-top">
+        <ul class="flex flex-col gap-4 p-4">
+          {navbarLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="block py-1 text-sm hover:text-accent transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
 </header>
-
 <script>
-    import { initMobileMenuAnimation } from '@/scripts/mobile-menu-animation';
+  import { initMobileMenuAnimation } from "@/scripts/mobile-menu-animation";
 
+  if (document.getElementById("menu-navbar-mobile-toggle")) {
     initMobileMenuAnimation();
+  }
 </script>
