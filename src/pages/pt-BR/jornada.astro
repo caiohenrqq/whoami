@@ -5,17 +5,26 @@ import Section from "@components/Section.astro";
 import CircularGallery from "@/blocks/Components/CircularGallery/CircularGallery";
 
 const galleryItems = [
-    { image: "/journey/biggest-challenge-a.jpg", text: "transplante de medula óssea" },
-    { image: "/journey/biggest-challenge-b.jpg", text: "feliz natal!" },
-    { image: "/journey/biggest-challenge-c.jpg", text: "sempre sorrindo" },
-    { image: "/journey/biggest-challenge.jpeg", text: "walter white da tecnologia kkkk" },
-    { image: "/journey/biggest-challenge-d.jpg", text: "você precisa comer pra ficar mais forte!" },
-    { image: "/journey/biggest-challenge-e.jpg", text: "siga em frente" },
-    { image: "/journey/biggest-challenge-f.jpg", text: "tempos difíceis" },
-    { image: "/journey/after-challenge-b.jpg", text: "c/ alessandro (cabelo)" },
-    { image: "/journey/after-challenge-c.jpg", text: "sempre estarei sorrindo" },
-    { image: "/journey/after-challenge.jpg", text: "hoje em dia" },
-    { image: "/journey/after-challenge-d.jpg", text: "obrigado por ler" },
+  {
+    image: "/journey/biggest-challenge-a.jpg",
+    text: "transplante de medula óssea",
+  },
+  { image: "/journey/biggest-challenge-b.jpg", text: "feliz natal!" },
+  { image: "/journey/biggest-challenge-c.jpg", text: "sempre sorrindo" },
+  {
+    image: "/journey/biggest-challenge.jpeg",
+    text: "walter white da tecnologia kkkk",
+  },
+  {
+    image: "/journey/biggest-challenge-d.jpg",
+    text: "vc precisa comer pra ficar mais forte!",
+  },
+  { image: "/journey/biggest-challenge-e.jpg", text: "siga em frente" },
+  { image: "/journey/biggest-challenge-f.jpg", text: "tempos difíceis" },
+  { image: "/journey/after-challenge-b.jpg", text: "c/ alessandro (cabelo)" },
+  { image: "/journey/after-challenge-c.jpg", text: "sempre estarei sorrindo" },
+  { image: "/journey/after-challenge.jpg", text: "hoje em dia" },
+  { image: "/journey/after-challenge-d.jpg", text: "obrigado por ler" },
 ];
 ---
 
@@ -23,8 +32,8 @@ const galleryItems = [
   <div class="container">
     <Section title="Jornada" id="jornada">
       <p class="text-neutral-400 italic text-center p-4 my-8">
-        "Não importa de onde você vem ou o que está passando. Você sempre pode
-        ser um herói. Apenas continue tentando!"
+        "Não importa de onde você vem nem o que está enfrentando. Você sempre
+        pode ser um herói, apenas continue tentando!"
       </p>
 
       <article
@@ -36,110 +45,98 @@ const galleryItems = [
         <p
           class="first-letter:text-4xl first-letter:font-bold first-letter:mr-2 first-letter:float-left first-letter:leading-none first-line:tracking-wide"
         >
-          Meu nome é Caio Henrique de Oliveira Santana, e eu tenho 21 anos.
-          Nascido e criado em Ji-Paraná, Rondônia, Brasil, uma cidade pequena
-          longe dos polos de tecnologia, mas que moldou a forma como eu abordo
-          problemas. Tive que descobrir as coisas por conta própria na maior parte
-          do tempo, porque as oportunidades aqui eram limitadas.
+          Meu nome é Caio Henrique de Oliveira Santana, tenho 21 anos. Nasci e
+          cresci em Ji-Paraná, Rondônia, longe dos grandes polos de tecnologia,
+          e isso moldou meu jeito de resolver problemas. Muitas vezes precisei
+          aprender sozinho, porque as oportunidades por aqui eram raras.
         </p>
 
         <p>
-          A adolescência foi difícil, além das coisas normais que todo mundo
-          enfrenta. Entre os 14 e os 20 anos, lutei contra dois cânceres
-          diferentes, um atrás do outro. Tudo mudou muito rápido. Hospitais se
-          tornaram rotina, e a disciplina não era mais opcional, era uma questão
-          de vida ou morte.
+          A adolescência foi dura, além dos desafios que todo mundo enfrenta.
+          Entre os 14 e os 20 anos, lutei contra dois cânceres em sequência.
+          Tudo aconteceu muito rápido: hospital virou rotina e disciplina deixou
+          de ser escolha, era questão de vida.
         </p>
 
         <p>
-          Durante o segundo câncer, recebi um transplante de medula óssea
-          <a
+          No segundo tratamento, recebi um <a
             href="https://www.gov.br/inca/pt-br/assuntos/cancer/tratamento/transplante-de-medula-ossea"
             class="transition-colors inline-block font-bold hover:bg-accent hover:text-text text-sm sm:text-base underline"
             target="_blank"
-            rel="noopener noreferrer">(transplante de medula óssea)</a
-          > do meu irmão, um presente que mudou tudo. Saí daquela confusão mais
-          teimoso em não desistir, não importa o que aparecesse no meu caminho,
-          e depois disso, as coisas finalmente começaram a dar certo.
+            rel="noopener noreferrer">transplante de medula óssea</a
+          > do meu irmão, um presente que mudou tudo. Saí daquela fase ainda mais
+          teimoso em não desistir. A partir dali, as coisas começaram a caminhar.
         </p>
 
         <p>
-          A tecnologia sempre me atraiu, no entanto. Mesmo quando as aulas de
-          matemática da escola não eram o suficiente, a programação autodidata
-          se tornou a minha paixão. Passei horas construindo, quebrando e
-          consertando projetos. Aprender na prática se tornou meu modo padrão
-          para qualquer coisa relacionada a código.
+          Mesmo com as lacunas das aulas de matemática, a tecnologia sempre me
+          chamou. Programação autodidata virou paixão: horas construindo,
+          quebrando e consertando projetos. Aprender fazendo se tornou meu
+          padrão para qualquer coisa relacionada a código.
         </p>
 
         <div class="h-px bg-neutral-200"></div>
 
         <p>
-          Comecei com sites básicos, depois passei para sistemas completos com
-          o tempo. Fiquei confortável com React e TypeScript no frontend, e
-          Laravel com MySQL no backend. Aprofundei-me no que realmente importa em
-          tecnologia: os fundamentos da ciência da computação. Fundamentos acima
-          de frameworks sempre importaram mais, essa mentalidade permaneceu em
-          todos os projetos.
+          Busco o que realmente importa: fundamentos de ciência da computação.
+          Para mim, base sólida vem antes de framework, e levo essa mentalidade
+          para todos os projetos.
         </p>
 
         <p>
-          Na BuscaSim, trabalhar como full-stack me ensinou sobre escala.
-          Construí funcionalidades que realmente moveram métricas, como um motor
-          de teste A/B usando lógica baseada em fluxos, que deu à empresa nova
-          flexibilidade, e uma camada de integração de API que lida com múltiplos
-          serviços externos via padrões de estratégia (strategy patterns). Ver o
-          impacto real no usuário ensina responsabilidade de uma forma que o
-          conhecimento teórico jamais conseguiria.
+          Na BuscaSim, atuar como full-stack me ensinou sobre escala. Construí
+          features que moveram métricas de verdade: um motor de testes A/B com
+          lógica por fluxos, dando flexibilidade à empresa, e uma camada de
+          integração com múltiplas APIs usando Strategy Pattern. Ver impacto
+          real no usuário ensina responsabilidade como teoria nenhuma consegue.
         </p>
 
         <div class="h-px bg-neutral-200"></div>
 
         <p>
-          Estou cursando Ciência da Computação agora, preenchendo as lacunas
-          daqueles anos "perdidos" da adolescência. Estou focado em matemática,
-          algoritmos e design de banco de dados, não apenas por notas, mas para
-          construir uma base sólida. Quero esse conhecimento fundamental para o
-          crescimento da minha carreira a longo prazo.
+          Hoje curso Ciência da Computação e estou preenchendo as lacunas
+          daqueles anos “perdidos”. Foco em matemática, algoritmos e modelagem
+          de dados, não só por nota, mas para construir uma base robusta para o
+          longo prazo.
         </p>
 
         <p>
-          No fundo, ainda sou obcecado por jogos. Uma vez, quis ter uma carreira
-          profissional de e-sports em CS:GO ou Fortnite. Não deu certo, mas esse
-          impulso competitivo se transferiu para a programação. Agora, trato a
-          programação como um esporte, com a mesma fome de melhorar,
-          constantemente superando a média.
+          No fundo, continuo obcecado por jogos. Quis ser pro player de CS:GO ou
+          Fortnite; não aconteceu, mas o espírito competitivo migrou para o
+          código. Encaro programação como esporte: treino constante, melhora
+          contínua, sempre buscando dar o próximo passo.
         </p>
 
         <div class="h-px bg-neutral-200"></div>
 
         <p>
-          Hoje em dia, equilibro trabalho, estudos e recuperação física. Sigo
-          uma rotina estruturada de exercícios, nutrição e sono. Sem extremos
-          malucos, apenas consistência. A mesma abordagem de quando depuro
-          código: progresso incremental diário. Eu avanço um pouco mais a cada
-          dia, seja na academia, no editor de código ou no livro de matemática.
+          Hoje, equilibro trabalho, estudos e recuperação física. Sigo uma
+          rotina consistente de treino, nutrição e sono. Sem extremos, apenas
+          constância. Como no debug: progresso incremental, todos os dias.
+          Avanço um pouco a cada dia, seja na academia, no editor ou no livro de
+          matemática.
         </p>
 
         <p>
-          Minha história não é apenas sobre especificações técnicas, é sobre
-          teimosia e a recusa em ficar para baixo. De um garoto de cidade
-          pequena no Brasil a entregar sistemas em produção, provei que as
-          limitações podem te impulsionar quando você permite. E sim, este é
-          definitivamente apenas o primeiro capítulo.
+          No fim, minha história não é só sobre stack. É sobre teimosia e recusa
+          em ficar no chão. De um garoto do interior a colocar sistemas em
+          produção, aprendi que limitações podem virar alavancas, quando você
+          permite. E isso aqui é só o primeiro capítulo.
         </p>
+
         <p class="text-neutral-400 italic text-center p-4 my-8">
-          Espero que este pequeno pedaço da minha história realmente ajude você.
+          Espero que esse pedaço da minha história te inspire de alguma forma.
           <br />
-          <span class="block mt-2">- Tudo de bom, Caio Henrique.</span>
+          <span class="block mt-2">— Tudo de bom, Caio Henrique.</span>
         </p>
       </article>
     </Section>
   </div>
-<div
+  <div
     class="sm:mx-auto h-[380px] sm:h-[420px] md:h-[500px] overflow-visible mb-25 md:mb-33"
   >
     <CircularGallery bend={1} items={galleryItems} client:load />
-    <div class='text-center opacity-60'>roll to the side here</div>
+    <div class="text-center opacity-60">roll to the side here</div>
   </div>
   <div class="flex flex-col items-center">
     <svg

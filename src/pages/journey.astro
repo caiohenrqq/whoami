@@ -5,17 +5,20 @@ import Section from "@components/Section.astro";
 import CircularGallery from "@/blocks/Components/CircularGallery/CircularGallery";
 
 const galleryItems = [
-    { image: "/journey/biggest-challenge-a.jpg", text: "bone marrow transplant" },
-    { image: "/journey/biggest-challenge-b.jpg", text: "happy christmas!" },
-    { image: "/journey/biggest-challenge-c.jpg", text: "always smilling" },
-    { image: "/journey/biggest-challenge.jpeg", text: "tech walter white xdd" },
-    { image: "/journey/biggest-challenge-d.jpg", text: "u need to eat to become stronger!" },
-    { image: "/journey/biggest-challenge-e.jpg", text: "keep going" },
-    { image: "/journey/biggest-challenge-f.jpg", text: "hard times" },
-    { image: "/journey/after-challenge-b.jpg", text: "w/ alessandro (cabelo)" },
-    { image: "/journey/after-challenge-c.jpg", text: "always gonna be smilling" },
-    { image: "/journey/after-challenge.jpg", text: "nowadays" },
-    { image: "/journey/after-challenge-d.jpg", text: "thanks for reading" },
+  { image: "/journey/biggest-challenge-a.jpg", text: "bone marrow transplant" },
+  { image: "/journey/biggest-challenge-b.jpg", text: "happy christmas!" },
+  { image: "/journey/biggest-challenge-c.jpg", text: "always smilling" },
+  { image: "/journey/biggest-challenge.jpeg", text: "tech walter white xdd" },
+  {
+    image: "/journey/biggest-challenge-d.jpg",
+    text: "u need to eat to become stronger!",
+  },
+  { image: "/journey/biggest-challenge-e.jpg", text: "keep going" },
+  { image: "/journey/biggest-challenge-f.jpg", text: "hard times" },
+  { image: "/journey/after-challenge-b.jpg", text: "w/ alessandro (cabelo)" },
+  { image: "/journey/after-challenge-c.jpg", text: "always gonna be smilling" },
+  { image: "/journey/after-challenge.jpg", text: "nowadays" },
+  { image: "/journey/after-challenge-d.jpg", text: "thanks for reading" },
 ];
 ---
 
@@ -38,9 +41,9 @@ const galleryItems = [
         >
           My name is Caio Henrique de Oliveira Santana, and I'm 21 years old.
           Born and raised in Ji-Paraná, Rondônia, Brazil, a small city far from
-          tech hubs, but one that shaped how I approach problems. I had to figure
-          things out myself most of the time because opportunities were limited
-          here.
+          tech hubs, but one that shaped how I approach problems. I had to
+          figure things out myself most of the time because opportunities were
+          limited here.
         </p>
 
         <p>
@@ -72,12 +75,9 @@ const galleryItems = [
         <div class="h-px bg-neutral-200"></div>
 
         <p>
-          I started with basic websites, then moved to full systems over time. I
-          got comfortable with React and TypeScript on the frontend, and Laravel
-          with MySQL on the backend. I dug deeper into what really matters in
-          tech: the foundations of computer science. Fundamentals over
-          frameworks always mattered more, that mindset stuck through every
-          project.
+          I dug deeper into what really matters in tech: the foundations of
+          computer science. Fundamentals over frameworks always mattered more,
+          that mindset stuck through every project.
         </p>
 
         <p>
@@ -129,7 +129,7 @@ const galleryItems = [
       </article>
     </Section>
   </div>
-<div
+  <div
     class="sm:mx-auto h-[380px] sm:h-[420px] md:h-[500px] overflow-visible mb-25 md:mb-33"
   >
     <CircularGallery bend={1} items={galleryItems} client:load />

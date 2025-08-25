@@ -2,7 +2,6 @@
 import Navbar from "@components/Navbar.astro";
 import "../styles/global.css";
 import CursorBall from "@components/CursorBall.astro";
-import CursorSpotlight from "@components/CursorSpotlight.astro";
 import Footer from "@components/Footer.astro";
 import RevealOnScroll from "@components/RevealOnScroll";
 import ScrollArrow from "@components/ScrollArrow";
@@ -36,7 +35,7 @@ const { title } = Astro.props;
     <Analytics />
     <SpeedInsights />
     <Squares
-    
+
       client:load
       direction="diagonal"
       speed={0.15}
@@ -45,7 +44,7 @@ const { title } = Astro.props;
       hoverFillColor="rgba(255,255,255,0"
     />
     <SmoothScroll client:load />
-    <CursorBall client:load />
+    <CursorBall />
     <Navbar />
     <main transition:animate="fade">
         <slot />
