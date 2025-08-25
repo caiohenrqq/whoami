@@ -1,46 +1,71 @@
-# Astro Starter Kit: Basics
+# 🌐 Whoami – Personal Portfolio
 
-```sh
-yarn create astro@latest -- --template basics
+This is my personal portfolio, built with **Astro** + **React** + **TypeScript**, showcasing my journey, projects, and experience. It features smooth animations with **GSAP**, soft scrolling with **Lenis**, and a clean UI. Deployed on **Vercel**. It supports both English 🇺🇸 and Portuguese 🇧🇷!
+
+---
+
+## 🚀 Tech Stack
+
+* [Astro](https://astro.build/)
+* [React](https://react.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [GSAP](https://gsap.com/) (animations)
+* [Lenis](https://lenis.studiofreight.com/) (smooth scrolling)
+* [react-icons](https://react-icons.github.io/react-icons/)
+* [Vercel](https://vercel.com/) (deploy)
+
+---
+
+## ⚙️ Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/caiohenrqq/whoami.git
+cd whoami
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Install dependencies:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+yarn install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Run the project locally:
 
-## 🧞 Commands
+```bash
+yarn dev
+```
 
-All commands are run from the root of the project, from a terminal:
+Open your browser at **[http://localhost:4321](http://localhost:4321)** (Astro's default) or the port shown in the terminal.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## 📦 Build for Production
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Create an optimized build:
+
+```bash
+yarn build
+```
+
+Preview the production build:
+
+```bash
+yarn preview
+```
+
+---
+
+## 📝 Notes
+
+* Requires **Node.js 18+**
+* Uses **Yarn** as the package manager
+* CI/CD friendly and deployable to **Vercel**
+
+---
+
+## 🌐 Live Demo
+
+🔗 **[https://caiohenrique.vercel.app](https://caiohenrique.vercel.app)**
