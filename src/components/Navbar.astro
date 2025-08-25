@@ -1,17 +1,70 @@
 ---
 import { HiMenu, HiX } from "react-icons/hi";
 
-const navbarLinks = [
-  { href: "journey", label: "/journey" },
+const urlSlugNow =
+  Astro.url.pathname.split("/").filter(Boolean).pop() ?? "home";
+
+const isAtJourneySection = ["journey", "jornada"].includes(urlSlugNow);
+
+const currentLanguage = Astro.url.pathname.startsWith("/pt-BR")
+  ? "pt-BR"
+  : "en";
+
+const alternateLanguage = currentLanguage === "pt-BR" ? "en" : "pt-BR";
+const baseRoute = currentLanguage === "pt-BR" ? "/pt-BR" : "";
+
+function getAlternateLanguageRoute(pathname: string) {
+  if (pathname.endsWith("/journey")) return "/pt-BR/jornada";
+  if (pathname.endsWith("/jornada")) return "/journey";
+
+  if (pathname === "/") return currentLanguage === "pt-BR" ? "/" : "/pt-BR";
+  return currentLanguage === "pt-BR"
+    ? pathname.replace(/^\/pt-BR/, "") || "/"
+    : `/pt-BR${pathname}`;
+}
+
+const alternateRoute = getAlternateLanguageRoute(Astro.url.pathname);
+
+const languageContent = {
+  en: {
+    whoami: "/",
+    journey: "/journey",
+    experience: "/experience",
+    projects: "/projects",
+    contact: "/contact",
+    languageAria: "Switch to Portuguese",
+    flag: "🇧🇷",
+  },
+  "pt-BR": {
+    whoami: "/",
+    journey: "/jornada",
+    experience: "/experiência",
+    projects: "/projetos",
+    contact: "/contato",
+    languageLabel: "EN",
+    languageAria: "Mudar para Inglês",
+    flag: "🇺🇸",
+  },
+};
+
+const dictionary = languageContent[currentLanguage];
+
+const navbarLinksEn = [
+  { href: "/journey", label: "/journey" },
   { href: "#experience", label: "/experience" },
   { href: "#projects", label: "/projects" },
   { href: "#contact", label: "/contact" },
 ];
 
-const urlSlugNow =
-  Astro.url.pathname.split("/").filter(Boolean).pop() ?? "home";
+const navbarLinksPtBr = [
+  { href: `${baseRoute}/jornada`, label: "/jornada" },
+  { href: `${baseRoute}#experience`, label: "/experiência" },
+  { href: `${baseRoute}#projects`, label: "/projetos" },
+  { href: `${baseRoute}#contact`, label: "/contato" },
+];
 
-const isAtJourneySection = urlSlugNow === "journey";
+const navbarLinks =
+  currentLanguage === "pt-BR" ? navbarLinksPtBr : navbarLinksEn;
 ---
 
 <header class="font-bold tracking-wider w-full pt-10 pl-5 pr-5 md:pl-0 md:pr-0">
@@ -20,9 +73,25 @@ const isAtJourneySection = urlSlugNow === "journey";
       isAtJourneySection ? "justify-center" : "justify-between"
     }`}
   >
-    <a href="/" class="text-xs sm:text-sm hover:text-accent transition-colors">
+    <a
+      href={baseRoute || "/"}
+      class="text-xs sm:text-sm hover:text-accent transition-colors"
+    >
       /whoami
     </a>
+
+    {
+      isAtJourneySection && (
+        <a
+          href={alternateRoute}
+          hreflang={alternateLanguage}
+          aria-label={dictionary.languageAria}
+          class="ml-3 text-[0.6rem] sm:text-sm opacity-80 hover:opacity-100 inline-flex items-center gap-1"
+        >
+          <span class="text-xl">{dictionary.flag}</span>
+        </a>
+      )
+    }
 
     <!-- Desktop -->
     {
@@ -36,6 +105,15 @@ const isAtJourneySection = urlSlugNow === "journey";
               {link.label}
             </a>
           ))}
+
+          <a
+            href={alternateRoute}
+            hreflang={alternateLanguage}
+            aria-label={dictionary.languageAria}
+            class="text-[0.6rem] sm:text-sm opacity-80 hover:opacity-100 inline-flex items-center gap-1"
+          >
+            <span class="text-xl">{dictionary.flag}</span>
+          </a>
         </div>
       )
     }
@@ -43,16 +121,27 @@ const isAtJourneySection = urlSlugNow === "journey";
     <!-- Mobile toggle menu button -->
     {
       !isAtJourneySection && (
-        <button
-          id="menu-navbar-mobile-toggle"
-          class="md:hidden rounded focus:outline-none"
-          aria-label="Toggle navbar menu"
-          aria-expanded="false"
-          data-open="false"
-        >
-          <HiMenu className="h-6 w-6 block [data-open='true']:hidden" />
-          <HiX className="h-6 w-6 hidden [data-open='true']:block" />
-        </button>
+        <div class="md:hidden ml-auto flex items-center gap-3">
+          <a
+            href={alternateRoute}
+            hreflang={alternateLanguage}
+            aria-label={dictionary.languageAria}
+            class="inline-flex items-center opacity-80 hover:opacity-100"
+          >
+            <span class="text-2xl leading-none">{dictionary.flag}</span>
+          </a>
+
+          <button
+            id="menu-navbar-mobile-toggle"
+            class="rounded focus:outline-none"
+            aria-label="Toggle navbar menu"
+            aria-expanded="false"
+            data-open="false"
+          >
+            <HiMenu className="h-6 w-6 block [data-open='true']:hidden" />
+            <HiX className="h-6 w-6 hidden [data-open='true']:block" />
+          </button>
+        </div>
       )
     }
   </nav>
@@ -80,7 +169,13 @@ const isAtJourneySection = urlSlugNow === "journey";
 <script>
   import { initMobileMenuAnimation } from "@/scripts/mobile-menu-animation";
 
-  if (document.getElementById("menu-navbar-mobile-toggle")) {
-    initMobileMenuAnimation();
+  function setupMobileMenu() {
+    if (document.getElementById("menu-navbar-mobile-toggle")) {
+      initMobileMenuAnimation();
+    }
   }
+
+  setupMobileMenu();
+
+  document.addEventListener("astro:after-swap", setupMobileMenu);
 </script>

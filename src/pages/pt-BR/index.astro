@@ -1,0 +1,141 @@
+---
+import ExperienceItem from "@components/ExperienceItem.astro";
+import ProjectCard from "@components/ProjectCard.astro";
+import Contato from "@components/pt-BR/Contato.astro";
+import Sobre from "@components/pt-BR/Sobre.astro";
+import Section from "@components/Section.astro";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Caio H.">
+  <main class="container">
+    <Section title="/sobre">
+      <Sobre />
+    </Section>
+
+    <Section id="experience" title="/experiência">
+      <ExperienceItem
+        title="Desenvolvedor Full Stack"
+        company="BuscaSim"
+        start="Março de 2025"
+        end="Presente"
+        location="Remoto"
+        description="Plataforma de consultas veiculares de alto tráfego (500k+ usuários/dia) que entrega informações automotivas detalhadas instantaneamente por consulta de placa/telefone/documento."
+        responsibilities={[
+          "Redesenhei o sistema de integração com provedores usando o Strategy Pattern, reduzindo em 40% o tempo de configuração de novos provedores e em mais de 60% a incidência de bugs relacionados.",
+          "Construí um sistema de testes A/B do zero com dashboard admin, middleware no servidor e suporte ao GTM, permitindo que o time de marketing rodasse testes de forma autônoma e aumentando as vendas em ~30%.",
+          "Acelerei dashboards lentos reescrevendo consultas em SQL puro e adicionando índices, reduzindo tempos de resposta em 35% e tornando os relatórios mais utilizáveis.",
+          "Implementei novas features consumindo APIs REST com Axios e TanStack Query, melhorando o cache e evitando requisições repetidas.",
+          "Usei TanStack Table para data grids, react-chartjs-2 para gráficos, Mantine para UI e Yup em diversas interfaces.",
+          "Fiz code review, testei funcionalidades e analisei logs via SSH para manter a estabilidade do sistema e a limpeza da base de código.",
+        ]}
+        technologies={[
+          "React",
+          "TypeScript/JavaScript",
+          "Laravel",
+          "PHP",
+          "MySQL",
+          "Axios",
+          "TanStack Query",
+          "TanStack Table",
+          "Mantine",
+          "react-chartjs-2",
+          "Yup",
+          "Docker",
+          "JWT",
+          "Google Tag Manager",
+          "Git",
+          "Trello",
+          "Slack",
+          "PHPUnit",
+          "Google Cloud Platform",
+          "Cloudflare",
+        ]}
+      />
+
+      <div class="border" />
+
+      <ExperienceItem
+        title="Desenvolvedor de Software & Técnico de TI"
+        company="Prefeitura Municipal de Ji-Paraná"
+        start="Fevereiro de 2023"
+        end="Janeiro de 2025"
+        location="Rondônia, Brasil"
+        description="Equipe interna de TI responsável por resolver demandas técnicas em secretarias e setores municipais."
+        responsibilities={[
+          "Liderei o desenvolvimento de um sistema de identificação de computadores que substituiu o processo manual, melhorando a eficiência do fluxo em 65% e reduzindo o tempo de onboarding.",
+          "Migrei o banco de dados do AWS RDS para Hostinger com phpMyAdmin, centralizando a infraestrutura e simplificando a manutenção.",
+          "Configurei pipelines de CI/CD com GitHub Actions para deploy via FTP, tornando as publicações mais rápidas e confiáveis.",
+          "Criei uma ferramenta cross-platform em Python com interface gráfica para automatizar tarefas de TI (processamento em lote, reset de spooler de impressoras, etc.), reduzindo erros de técnicos e aumentando a produtividade em 30%.",
+          "Treinei a equipe de suporte no uso das novas ferramentas e as validei em produção, garantindo adoção de longo prazo e valor contínuo.",
+        ]}
+        technologies={[
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "Python",
+          "Hostinger",
+          "GitHub Actions",
+        ]}
+      />
+    </Section>
+
+    <div class="border" />
+
+    <div class="min-h-screen">
+      <Section id="projects" title="/projetos">
+        <ProjectCard
+          title="Portfolio"
+          start="Agosto de 2025"
+          end="Presente"
+          description="Meu site de portfólio pessoal, apresentando habilidades, projetos e experiências como desenvolvedor de software — construído com <3."
+          technologies={[
+            "React",
+            "TypeScript/JavaScript",
+            "Vercel",
+            "Astro",
+            "react-icons",
+            "GSAP",
+            "Lenis",
+            "Git",
+            "Tailwind CSS",
+          ]}
+          repository="https://github.com/caiohenrqq/whoami"
+          website="/"
+          sample={[
+            "/projects/AcademicHub/sample-academichub-1.gif",
+            "/projects/AcademicHub/sample-academichub-2.gif",
+          ]}
+        />
+        <ProjectCard
+          title="AcademicHub"
+          start="Outubro de 2024"
+          end="Dezembro de 2024"
+          description="Aplicativo de chat em tempo real para comunidades universitárias, permitindo que estudantes criem tópicos, enviem mensagens e interajam em discussões."
+          technologies={[
+            "React",
+            "Ionic",
+            "Firebase",
+            "TypeScript/JavaScript",
+            "Vercel",
+            "Firestore",
+            "NoSQL",
+            "Git",
+          ]}
+          repository="https://github.com/caiohenrqq/AcademicHub"
+          website="https://academichub-eight.vercel.app"
+          sample={[
+            "/projects/AcademicHub/sample-academichub-1.gif",
+            "/projects/AcademicHub/sample-academichub-2.gif",
+          ]}
+        />
+      </Section>
+
+      <div class="border" />
+
+      <Section id="contact" title="/contato">
+        <Contato />
+      </Section>
+    </div>
+  </main>
+</Layout>

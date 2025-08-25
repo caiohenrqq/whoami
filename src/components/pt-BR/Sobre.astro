@@ -1,0 +1,109 @@
+---
+import SocialLinks from "@components/SocialLinks.astro";
+---
+
+<div class="space-y-4 text-base/relaxed">
+  <p
+    class="font-body inline-block max-w-xl bg-highlight text-primary px-1 font-bold select-none text-sm sm:text-base"
+  >
+    <span class="about-typed-greeting-pt-BR truncate"></span>
+    <span class="invisible" aria-hidden="true"></span>
+  </p>
+  <p>
+    Eu sou Caio Henrique, um desenvolvedor de software brasileiro com mais de
+    dois anos de experiência. Atualmente, <strong>Desenvolvedor Full Stack</strong> na <a
+      href="https://buscasim.com.br/"
+      class="transition-colors inline-block px-1 underline bg-highlight font-bold text-primary hover:bg-accent hover:text-text"
+      target="_blank">BuscaSim</a
+    >.
+  </p>
+  <p>
+    Eu realmente amo tecnologia & programação e estou sempre em busca de novos
+    desafios para melhorar minhas habilidades e conhecimentos.
+  </p>
+  <p>
+    Dê uma olhada na minha
+    <a
+      href="/pt-BR/jornada"
+      class="transition-colors inline-block px-1 bg-highlight font-bold text-primary hover:bg-accent hover:text-text underline"
+    >
+      jornada de superação
+    </a>.
+  </p>
+  <p>
+    Atualmente cursando <strong>Bacharelado em Ciência da Computação</strong> na
+    <a
+      href="https://www.uninter.com/"
+      class="transition-colors px-1 bg-highlight font-bold text-primary hover:bg-accent hover:text-text underline"
+      target="_blank">Uninter</a
+    >. Tenho facilidade em trabalhar tanto em Inglês 🇺🇸 (<a href="https://cert.efset.org/en/T4omaM" class="transition-colors underline font-bold hover:bg-accent hover:text-text" target="_blank">certificado</a>) quanto em Português 🇧🇷/🇵🇹.
+  </p>
+  <div class="flex justify-center mb-5">
+    <SocialLinks />
+  </div>
+  <div class="border"></div>
+  <div class="flex flex-col items-center">
+    <svg
+      viewBox="0 0 24 24"
+      class="scroll-arrow h-10 w-10"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M6 9l6 6 6-6"></path>
+    </svg>
+  </div>
+</div>
+
+<script>
+  import Typed from "typed.js";
+
+  const greetingsVariations = [
+    "- hey, nice to meet you!",
+    "- prazer em te conhecer!",
+    "- ¡encantado de conocerte!",
+    "- ravi de vous rencontrer !",
+    "- schön, dich kennenzulernen!",
+    "- piacere di conoscerti!",
+    "- приятно познакомиться!",
+    "- مرحبًا، تشرفتُ بمعرفتك!",
+    "- こんにちは、はじめまして！",
+    "- 안녕하세요, 만나서 반가워요!",
+    "- 很高兴认识你!",
+    "- 很高興認識你!",
+    "- приятно вас встретить!",
+    "- glædeligt at møde dig!",
+    "- leuk je te ontmoeten!",
+    "- encantado de o conhecer!",
+    "- senang bertemu denganmu!",
+    "- sangat senang bertemu dengan Anda!",
+    "- приятно се запознахме!",
+    "- приятно да се запознаем!",
+  ];
+
+  let typedInstance: Typed | null = null;
+
+  function initTypedAnimation() {
+    if (typedInstance) typedInstance.destroy();
+
+    const aboutTypedGreeting = document.querySelector(".about-typed-greeting-pt-BR");
+    if (aboutTypedGreeting) {
+      typedInstance = new Typed(".about-typed-greeting-pt-BR", {
+        strings: greetingsVariations.sort(() => Math.random() - 0.5),
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 1500,
+        smartBackspace: true,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+    }
+  }
+
+  initTypedAnimation();
+
+  document.addEventListener("astro:after-swap", initTypedAnimation);
+</script>

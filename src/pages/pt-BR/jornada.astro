@@ -1,0 +1,158 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Contact from "@components/Contact.astro";
+import Section from "@components/Section.astro";
+import CircularGallery from "@/blocks/Components/CircularGallery/CircularGallery";
+
+const galleryItems = [
+    { image: "/journey/biggest-challenge-a.jpg", text: "transplante de medula óssea" },
+    { image: "/journey/biggest-challenge-b.jpg", text: "feliz natal!" },
+    { image: "/journey/biggest-challenge-c.jpg", text: "sempre sorrindo" },
+    { image: "/journey/biggest-challenge.jpeg", text: "walter white da tecnologia kkkk" },
+    { image: "/journey/biggest-challenge-d.jpg", text: "você precisa comer pra ficar mais forte!" },
+    { image: "/journey/biggest-challenge-e.jpg", text: "siga em frente" },
+    { image: "/journey/biggest-challenge-f.jpg", text: "tempos difíceis" },
+    { image: "/journey/after-challenge-b.jpg", text: "c/ alessandro (cabelo)" },
+    { image: "/journey/after-challenge-c.jpg", text: "sempre estarei sorrindo" },
+    { image: "/journey/after-challenge.jpg", text: "hoje em dia" },
+    { image: "/journey/after-challenge-d.jpg", text: "obrigado por ler" },
+];
+---
+
+<Layout title="Caio H.">
+  <div class="container">
+    <Section title="Jornada" id="jornada">
+      <p class="text-neutral-400 italic text-center p-4 my-8">
+        "Não importa de onde você vem ou o que está passando. Você sempre pode
+        ser um herói. Apenas continue tentando!"
+      </p>
+
+      <article
+        class="prose prose-invert max-w-none
+               prose-p:leading-7 md:prose-p:leading-8
+               tracking-[0.01em] md:tracking-[0.015em]
+               [&>*]:mb-6"
+      >
+        <p
+          class="first-letter:text-4xl first-letter:font-bold first-letter:mr-2 first-letter:float-left first-letter:leading-none first-line:tracking-wide"
+        >
+          Meu nome é Caio Henrique de Oliveira Santana, e eu tenho 21 anos.
+          Nascido e criado em Ji-Paraná, Rondônia, Brasil, uma cidade pequena
+          longe dos polos de tecnologia, mas que moldou a forma como eu abordo
+          problemas. Tive que descobrir as coisas por conta própria na maior parte
+          do tempo, porque as oportunidades aqui eram limitadas.
+        </p>
+
+        <p>
+          A adolescência foi difícil, além das coisas normais que todo mundo
+          enfrenta. Entre os 14 e os 20 anos, lutei contra dois cânceres
+          diferentes, um atrás do outro. Tudo mudou muito rápido. Hospitais se
+          tornaram rotina, e a disciplina não era mais opcional, era uma questão
+          de vida ou morte.
+        </p>
+
+        <p>
+          Durante o segundo câncer, recebi um transplante de medula óssea
+          <a
+            href="https://www.gov.br/inca/pt-br/assuntos/cancer/tratamento/transplante-de-medula-ossea"
+            class="transition-colors inline-block font-bold hover:bg-accent hover:text-text text-sm sm:text-base underline"
+            target="_blank"
+            rel="noopener noreferrer">(transplante de medula óssea)</a
+          > do meu irmão, um presente que mudou tudo. Saí daquela confusão mais
+          teimoso em não desistir, não importa o que aparecesse no meu caminho,
+          e depois disso, as coisas finalmente começaram a dar certo.
+        </p>
+
+        <p>
+          A tecnologia sempre me atraiu, no entanto. Mesmo quando as aulas de
+          matemática da escola não eram o suficiente, a programação autodidata
+          se tornou a minha paixão. Passei horas construindo, quebrando e
+          consertando projetos. Aprender na prática se tornou meu modo padrão
+          para qualquer coisa relacionada a código.
+        </p>
+
+        <div class="h-px bg-neutral-200"></div>
+
+        <p>
+          Comecei com sites básicos, depois passei para sistemas completos com
+          o tempo. Fiquei confortável com React e TypeScript no frontend, e
+          Laravel com MySQL no backend. Aprofundei-me no que realmente importa em
+          tecnologia: os fundamentos da ciência da computação. Fundamentos acima
+          de frameworks sempre importaram mais, essa mentalidade permaneceu em
+          todos os projetos.
+        </p>
+
+        <p>
+          Na BuscaSim, trabalhar como full-stack me ensinou sobre escala.
+          Construí funcionalidades que realmente moveram métricas, como um motor
+          de teste A/B usando lógica baseada em fluxos, que deu à empresa nova
+          flexibilidade, e uma camada de integração de API que lida com múltiplos
+          serviços externos via padrões de estratégia (strategy patterns). Ver o
+          impacto real no usuário ensina responsabilidade de uma forma que o
+          conhecimento teórico jamais conseguiria.
+        </p>
+
+        <div class="h-px bg-neutral-200"></div>
+
+        <p>
+          Estou cursando Ciência da Computação agora, preenchendo as lacunas
+          daqueles anos "perdidos" da adolescência. Estou focado em matemática,
+          algoritmos e design de banco de dados, não apenas por notas, mas para
+          construir uma base sólida. Quero esse conhecimento fundamental para o
+          crescimento da minha carreira a longo prazo.
+        </p>
+
+        <p>
+          No fundo, ainda sou obcecado por jogos. Uma vez, quis ter uma carreira
+          profissional de e-sports em CS:GO ou Fortnite. Não deu certo, mas esse
+          impulso competitivo se transferiu para a programação. Agora, trato a
+          programação como um esporte, com a mesma fome de melhorar,
+          constantemente superando a média.
+        </p>
+
+        <div class="h-px bg-neutral-200"></div>
+
+        <p>
+          Hoje em dia, equilibro trabalho, estudos e recuperação física. Sigo
+          uma rotina estruturada de exercícios, nutrição e sono. Sem extremos
+          malucos, apenas consistência. A mesma abordagem de quando depuro
+          código: progresso incremental diário. Eu avanço um pouco mais a cada
+          dia, seja na academia, no editor de código ou no livro de matemática.
+        </p>
+
+        <p>
+          Minha história não é apenas sobre especificações técnicas, é sobre
+          teimosia e a recusa em ficar para baixo. De um garoto de cidade
+          pequena no Brasil a entregar sistemas em produção, provei que as
+          limitações podem te impulsionar quando você permite. E sim, este é
+          definitivamente apenas o primeiro capítulo.
+        </p>
+        <p class="text-neutral-400 italic text-center p-4 my-8">
+          Espero que este pequeno pedaço da minha história realmente ajude você.
+          <br />
+          <span class="block mt-2">- Tudo de bom, Caio Henrique.</span>
+        </p>
+      </article>
+    </Section>
+  </div>
+<div
+    class="sm:mx-auto h-[380px] sm:h-[420px] md:h-[500px] overflow-visible mb-25 md:mb-33"
+  >
+    <CircularGallery bend={1} items={galleryItems} client:load />
+    <div class='text-center opacity-60'>roll to the side here</div>
+  </div>
+  <div class="flex flex-col items-center">
+    <svg
+      viewBox="0 0 24 24"
+      class="scroll-arrow h-10 w-10"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M6 9l6 6 6-6"></path>
+    </svg>
+  </div>
+  <Contact />
+</Layout>

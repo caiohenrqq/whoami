@@ -36,6 +36,7 @@ const { title } = Astro.props;
     <Analytics />
     <SpeedInsights />
     <Squares
+    
       client:load
       direction="diagonal"
       speed={0.15}
@@ -46,9 +47,9 @@ const { title } = Astro.props;
     <SmoothScroll client:load />
     <CursorBall client:load />
     <Navbar />
-    <body transition:animate="fade">
-      <slot />
-    </body>
+    <main transition:animate="fade">
+        <slot />
+    </main>
     <RevealOnScroll client:load />
     <ScrollArrow client:load />
     <Footer />

@@ -1,0 +1,66 @@
+---
+import SocialLinks from "@components/SocialLinks.astro";
+---
+
+<div
+  class="text-center min-h-[50vh] md:min-h-[70vh] flex flex-col items-center justify-center gap-8"
+>
+  <p class="text-xl text-text max-w-2xl">
+    Vamos construir algo <span
+      class="contact-typed-phrase-pt-BR inline-block whitespace-nowrap"
+    ></span>juntos!
+  </p>
+  <SocialLinks />
+</div>
+
+<script>
+  import Typed from "typed.js";
+
+  if (typeof window !== "undefined") {
+    const amazingVariations = [
+      "amazing",
+      "increíble",
+      "incroyable",
+      "unglaublich",
+      "驚くばかり",
+      "maravilhoso",
+      "fantástico",
+      "офигенно",
+      "خارق",
+      "extraordinário",
+      "素晴らしい",
+      "놀라운",
+      "惊人",
+      "incredibile",
+      "fantastisch",
+      "أروع",
+      "удивительный",
+      "astonishing",
+      "magnifique",
+      "espetacular",
+    ];
+
+    let contactTypedInstance: Typed | null = null;
+
+    function initContactTypedAnimation() {
+      if (contactTypedInstance) contactTypedInstance.destroy();
+
+      const contactTypePhrase = document.querySelector(".contact-typed-phrase-pt-BR");
+      if (contactTypePhrase) {
+        contactTypedInstance = new Typed(".contact-typed-phrase-pt-BR", {
+          strings: amazingVariations.sort(() => Math.random() - 0.5),
+          typeSpeed: 50,
+          backSpeed: 25,
+          backDelay: 1500,
+          loop: true,
+          showCursor: true,
+          cursorChar: "|",
+        });
+      }
+    }
+
+    initContactTypedAnimation();
+
+    document.addEventListener("astro:after-swap", initContactTypedAnimation);
+  }
+</script>
