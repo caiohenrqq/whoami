@@ -13,17 +13,37 @@ const currentLanguage = Astro.url.pathname.startsWith("/pt-BR")
 const alternateLanguage = currentLanguage === "pt-BR" ? "en" : "pt-BR";
 const baseRoute = currentLanguage === "pt-BR" ? "/pt-BR" : "";
 
-function getAlternateLanguageRoute(pathname: string) {
-  if (pathname.endsWith("/journey")) return "/pt-BR/jornada";
-  if (pathname.endsWith("/jornada")) return "/journey";
-
-  if (pathname === "/") return currentLanguage === "pt-BR" ? "/" : "/pt-BR";
-  return currentLanguage === "pt-BR"
-    ? pathname.replace(/^\/pt-BR/, "") || "/"
-    : `/pt-BR${pathname}`;
+function stripTrailingSlash(path: string) {
+  return path !== "/" ? path.replace(/\/+$/, "") : "/";
 }
 
-const alternateRoute = getAlternateLanguageRoute(Astro.url.pathname);
+function getAlternateLanguageRoute(url: URL) {
+  const currentPath = stripTrailingSlash(url.pathname);
+  const queryString = url.search ?? "";
+  const fragment = url.hash ?? "";
+
+  if (currentPath === "/journey")
+    return `/pt-BR/jornada${queryString}${fragment}`;
+  if (currentPath === "/pt-BR/jornada")
+    return `/journey${queryString}${fragment}`;
+
+  if (currentPath === "/") {
+    return currentLanguage === "pt-BR"
+      ? `/${queryString}${fragment}`
+      : `/pt-BR${queryString}${fragment}`;
+  }
+
+  if (currentLanguage === "pt-BR") {
+    const englishPath = stripTrailingSlash(
+      currentPath.replace(/^\/pt-BR/, "") || "/"
+    );
+    return `${englishPath}${queryString}${fragment}`;
+  } else {
+    return `/pt-BR${currentPath}${queryString}${fragment}`;
+  }
+}
+
+const alternateRoute = getAlternateLanguageRoute(Astro.url);
 
 const languageContent = {
   en: {
