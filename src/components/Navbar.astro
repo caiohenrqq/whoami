@@ -132,6 +132,9 @@ const navbarLinks =
             aria-label={dictionary.languageAria}
             class="text-[0.6rem] sm:text-sm opacity-80 hover:opacity-100 inline-flex items-center gap-1"
           >
+            <span class="text-[0.8em] align-super">
+              {currentLanguage === "en" ? "click me! " : "clique aqui!"}
+            </span>
             <span class="text-xl">{dictionary.flag}</span>
           </a>
         </div>

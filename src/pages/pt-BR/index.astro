@@ -16,40 +16,58 @@ import Layout from "@layouts/Layout.astro";
     <Section id="experience" title="/experiência">
       <ExperienceItem
         title="Desenvolvedor Full Stack"
-        company="BuscaSim"
-        start="Janeiro de 2025"
+        company="Unlockar"
+        start="Janeiro de 2026"
         end="Presente"
         location="Remoto"
-        description="Plataforma de consultas veiculares de alto tráfego (500k+ usuários/dia) que entrega informações automotivas detalhadas instantaneamente por consulta de placa/telefone/documento."
+        description="SaaS de inteligência veicular de alta performance projetado para agregação de dados em tempo real, normalização e otimização de SEO."
         responsibilities={[
-          "Redesenhei o sistema de integração com provedores usando o Strategy Pattern, reduzindo em 40% o tempo de configuração de novos provedores e em mais de 60% a incidência de bugs relacionados.",
-          "Construí um sistema de testes A/B do zero com dashboard admin, middleware no servidor e suporte ao GTM, permitindo que o time de marketing rodasse testes de forma autônoma e aumentando as vendas em ~30%.",
-          "Acelerei dashboards lentos reescrevendo consultas em SQL puro e adicionando índices, reduzindo tempos de resposta em 35% e tornando os relatórios mais utilizáveis.",
-          "Implementei novas features consumindo APIs REST com Axios e TanStack Query, melhorando o cache e evitando requisições repetidas.",
-          "Usei TanStack Table para data grids, react-chartjs-2 para gráficos, Mantine para UI e Yup em diversas interfaces.",
-          "Fiz code review, testei funcionalidades e analisei logs via SSH para manter a estabilidade do sistema e a limpeza da base de código.",
+          "Reduzi a latência de busca em 96% (2.5s para 80ms) e os custos operacionais em 60% ao arquitetar uma camada de cache com Redis e implementar a reutilização de relatórios MongoDB baseada em hash.",
+          "Otimizei a escalabilidade da infraestrutura e reduzi o overhead de hospedagem ao projetar uma arquitetura de microsserviços desacoplada com Next.js e Node.js, conteinerizada via Docker e orquestrada com Nginx.",
+          "Garanti 100% de consistência transacional na entrega de produtos digitais ao engenheirar um fluxo de pagamento idempotente utilizando webhooks assíncronos do Stripe e operações atômicas de banco de dados.",
+        ]}
+        technologies={[
+          "Next.js",
+          "Node.js",
+          "TypeScript",
+          "Redis",
+          "MongoDB",
+          "Docker",
+          "Nginx",
+          "Stripe",
+          "Zod",
+          "Zustand",
+          "Linux (Debian)",
+        ]}
+      />
+
+      <div class="border" />
+
+      <ExperienceItem
+        title="Desenvolvedor Full Stack"
+        company="BuscaSim"
+        start="Fevereiro de 2025"
+        end="Janeiro de 2026"
+        location="Remoto"
+        description="Plataforma de consultas veiculares de alto tráfego (500k+ usuários/dia) que entrega informações automotivas detalhadas instantaneamente."
+        responsibilities={[
+          "Refatorei a camada de integração com provedores externos usando o Strategy Pattern, reduzindo o tempo de onboarding de novas APIs de 8 para 2 dias e economizando R$ 7.000/mês ao eliminar requisições duplicadas.",
+          "Construí um ecossistema de testes A/B com Laravel e React em ambiente de alto tráfego, integrando GA4 e GTM para eliminar mais de 90% dos testes manuais do time de marketing.",
+          "Desenvolvi 8 dashboards de alta performance usando TanStack Table e Query, alcançando tempos de carregamento consistentes abaixo de 1 segundo para visualização de dados de alto volume.",
+          "Projetei componentes de UI reutilizáveis com Mantine e controlei validações de formulários complexos usando Yup.",
         ]}
         technologies={[
           "React",
-          "TypeScript/JavaScript",
           "Laravel",
+          "TypeScript",
           "PHP",
           "MySQL",
-          "Axios",
           "TanStack Query",
           "TanStack Table",
           "Mantine",
-          "react-chartjs-2",
-          "Yup",
           "Docker",
-          "JWT",
           "Google Tag Manager",
-          "Git",
-          "Trello",
-          "Slack",
-          "PHPUnit",
           "Google Cloud Platform",
-          "Cloudflare",
         ]}
       />
 
@@ -66,8 +84,7 @@ import Layout from "@layouts/Layout.astro";
           "Liderei o desenvolvimento de um sistema de identificação de computadores que substituiu o processo manual, melhorando a eficiência do fluxo em 65% e reduzindo o tempo de onboarding.",
           "Migrei o banco de dados do AWS RDS para Hostinger com phpMyAdmin, centralizando a infraestrutura e simplificando a manutenção.",
           "Configurei pipelines de CI/CD com GitHub Actions para deploy via FTP, tornando as publicações mais rápidas e confiáveis.",
-          "Criei uma ferramenta cross-platform em Python com interface gráfica para automatizar tarefas de TI (processamento em lote, reset de spooler de impressoras, etc.), reduzindo erros de técnicos e aumentando a produtividade em 30%.",
-          "Treinei a equipe de suporte no uso das novas ferramentas e as validei em produção, garantindo adoção de longo prazo e valor contínuo.",
+          "Criei uma ferramenta cross-platform em Python com interface gráfica para automatizar tarefas de TI (processamento em lote, reset de spooler, etc.), reduzindo erros operacionais e aumentando a produtividade em 30%.",
         ]}
         technologies={[
           "PHP",
@@ -76,6 +93,7 @@ import Layout from "@layouts/Layout.astro";
           "Python",
           "Hostinger",
           "GitHub Actions",
+          "Tkinter",
         ]}
       />
     </Section>

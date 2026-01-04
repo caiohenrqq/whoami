@@ -16,40 +16,58 @@ import Layout from "@layouts/Layout.astro";
     <Section id="experience" title="/experience">
       <ExperienceItem
         title="Full Stack Developer"
-        company="BuscaSim"
-        start="January 2025"
+        company="Unlockar"
+        start="January 2026"
         end="Present"
         location="Remote"
-        description="High-traffic vehicle lookup platform (500k+ daily users) that delivers detailed automotive information instantly by plate/phone/document lookup."
+        description="High-performance vehicle intelligence SaaS engineered for real-time data aggregation, normalization, and SEO optimization."
         responsibilities={[
-          "Redesigned the API integration system with the Strategy Pattern, cutting provider setup time by 40% and reducing related bugs by over 60%.",
-          "Built an A/B testing system from zero with an admin dashboard, server middleware, and GTM support, which let the marketing team run tests on their own and increased sales by about 30%.",
-          "Improved slow dashboards by rewriting queries in raw SQL and adding indexes, lowering response times by 35% and making reports easier to use.",
-          "Added new features that used REST APIs with Axios and TanStack Query, improving caching and avoiding repeated requests.",
-          "Used TanStack Table for data grids, react-chartjs-2 for charts, Mantine for UI, and Yup for many interfaces.",
-          "Reviewed code, tested features, and checked logs over SSH to help keep the system stable and the codebase clean.",
+          "Slashed data retrieval latency by 96% (2.5s to 80ms) and operational costs by 60% by architecting a Redis caching layer and implementing hash-based MongoDB report reuse.",
+          "Optimized infrastructure scalability and reduced hosting overhead by designing a decoupled microservices architecture with Next.js and Node.js, containerized via Docker and orchestrated with Nginx.",
+          "Secured 100% transaction consistency for digital product delivery by engineering an idempotent payment flow using Stripe asynchronous webhooks and atomic database operations.",
+        ]}
+        technologies={[
+          "Next.js",
+          "Node.js",
+          "TypeScript",
+          "Redis",
+          "MongoDB",
+          "Docker",
+          "Nginx",
+          "Stripe",
+          "Zod",
+          "Zustand",
+          "Linux (Debian)",
+        ]}
+      />
+
+      <div class="border" />
+
+      <ExperienceItem
+        title="Full Stack Developer"
+        company="BuscaSim"
+        start="February 2025"
+        end="January 2026"
+        location="Remote"
+        description="High-traffic vehicle lookup platform (500k+ daily users) that delivers detailed automotive information instantly."
+        responsibilities={[
+          "Refactored the external provider integration layer using the Strategy Pattern, reducing new API onboarding time from 8 to 2 days and saving R$7,000/month by eliminating duplicate requests.",
+          "Built an A/B testing ecosystem with Laravel and React in a high-traffic environment, integrating GA4 and GTM to eliminate over 90% of the marketing team's manual tests.",
+          "Developed 8 high-performance dashboards using TanStack Table and Query, achieving consistent load times under 1 second for high-volume data visualization.",
+          "Designed reusable UI components with Mantine and controlled complex form validations using Yup.",
         ]}
         technologies={[
           "React",
-          "TypeScript/JavaScript",
           "Laravel",
+          "TypeScript",
           "PHP",
           "MySQL",
-          "Axios",
           "TanStack Query",
           "TanStack Table",
           "Mantine",
-          "react-chartjs-2",
-          "Yup",
           "Docker",
-          "JWT",
           "Google Tag Manager",
-          "Git",
-          "Trello",
-          "Slack",
-          "PHPUnit",
           "Google Cloud Platform",
-          "Cloudflare",
         ]}
       />
 
@@ -67,7 +85,6 @@ import Layout from "@layouts/Layout.astro";
           "Migrated the database from AWS RDS to Hostinger with phpMyAdmin, centralizing infrastructure and simplifying maintenance.",
           "Set up CI/CD pipelines with GitHub Actions to deploy updates via FTP, making deployments faster and more reliable.",
           "Built a cross-platform Python tool with a GUI to automate IT tasks like batch processing and printer spooler resets, reducing technician errors and improving productivity by 30%.",
-          "Trained the support team to use new tools effectively and validated them in production, ensuring long-term adoption and value.",
         ]}
         technologies={[
           "PHP",
@@ -76,12 +93,13 @@ import Layout from "@layouts/Layout.astro";
           "Python",
           "Hostinger",
           "GitHub Actions",
+          "Tkinter",
         ]}
       />
     </Section>
-    
+
     <div class="border" />
-    
+
     <div class="min-h-screen">
       <Section id="projects" title="/projects">
         <ProjectCard
@@ -130,9 +148,9 @@ import Layout from "@layouts/Layout.astro";
           ]}
         />
       </Section>
-      
+
       <div class="border" />
-      
+
       <Section id="contact" title="/contact">
         <Contact />
       </Section>
