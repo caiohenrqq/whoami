@@ -5,9 +5,43 @@ import ExperienceItem from "@components/ExperienceItem.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import Section from "@components/Section.astro";
 import Layout from "@layouts/Layout.astro";
+
+const siteUrl = "https://caiohenrique.vercel.app";
+
+const title = "Caio Henrique | Full Stack Developer";
+const description =
+  "Brazilian full stack developer focused on NestJS, Next.js, TypeScript, scalable products, and high-impact software engineering.";
+const canonicalPath = "/";
+const alternateLocales = [
+  { hrefLang: "en", path: "/" },
+  { hrefLang: "pt-BR", path: "/pt-BR" },
+  { hrefLang: "x-default", path: "/" },
+];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${siteUrl}/#profile-en`,
+  url: `${siteUrl}/`,
+  name: title,
+  description,
+  inLanguage: "en",
+  isPartOf: {
+    "@id": `${siteUrl}/#website`,
+  },
+  mainEntity: {
+    "@id": `${siteUrl}/#caio-henrique`,
+  },
+};
 ---
 
-<Layout title="Caio H.">
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalPath={canonicalPath}
+  alternateLocales={alternateLocales}
+  structuredData={structuredData}
+>
   <main class="container">
     <Section title="/about">
       <About />

@@ -11,26 +11,139 @@ import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
 import { ClientRouter } from "astro:transitions";
 
-interface Props {
-  title: string;
+type SeoType = "website" | "article";
+
+interface AlternateLocaleLink {
+  hrefLang: string;
+  path: string;
 }
 
-const { title } = Astro.props;
+type StructuredData =
+  | Record<string, unknown>
+  | Array<Record<string, unknown>>;
+
+interface Props {
+  title: string;
+  description: string;
+  lang: "en" | "pt-BR";
+  canonicalPath: string;
+  alternateLocales?: AlternateLocaleLink[];
+  type?: SeoType;
+  noindex?: boolean;
+  structuredData?: StructuredData;
+}
+
+const {
+  title,
+  description,
+  lang,
+  canonicalPath,
+  alternateLocales = [],
+  type = "website",
+  noindex = false,
+  structuredData,
+} = Astro.props;
+
+const siteUrl = (Astro.site?.toString() ?? "https://caiohenrique.vercel.app").replace(/\/$/, "");
+
+function normalizePath(path: string) {
+  if (!path || path === "/") return "/";
+
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return normalized.replace(/\/+$/, "");
+}
+
+function absoluteUrl(path: string) {
+  return `${siteUrl}${normalizePath(path)}`;
+}
+
+const canonicalUrl = absoluteUrl(canonicalPath);
+const robotsContent = noindex ? "noindex, nofollow" : "index, follow";
+const ogLocale = lang === "pt-BR" ? "pt_BR" : "en_US";
+const ogAlternateLocales = alternateLocales
+  .filter(({ hrefLang }) => hrefLang !== "x-default" && hrefLang !== lang)
+  .map(({ hrefLang }) => (hrefLang === "pt-BR" ? "pt_BR" : "en_US"));
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteUrl}/#caio-henrique`,
+  name: "Caio Henrique",
+  url: siteUrl,
+  jobTitle: "Full Stack Developer",
+  nationality: "Brazilian",
+  knowsLanguage: ["en", "pt-BR", "pt-PT"],
+  sameAs: [
+    "https://github.com/caiohenrqq",
+    "https://linkedin.com/in/caiohenrqq",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: "Caio Henrique Portfolio",
+  inLanguage: lang,
+  publisher: {
+    "@id": `${siteUrl}/#caio-henrique`,
+  },
+};
+
+const structuredDataItems = [
+  websiteSchema,
+  personSchema,
+  ...(structuredData
+    ? Array.isArray(structuredData)
+      ? structuredData
+      : [structuredData]
+    : []),
+];
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
+    <meta name="robots" content={robotsContent} />
     <meta name="google-site-verification" content="PtkUPn04SId2yLsyzyQ9xi1XwVe7_JDriKaiHKbDBUQ" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+    {
+      alternateLocales.map(({ hrefLang, path }) => (
+        <link rel="alternate" hreflang={hrefLang} href={absoluteUrl(path)} />
+      ))
+    }
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Caio Henrique Portfolio" />
+    <meta property="og:locale" content={ogLocale} />
+    {
+      ogAlternateLocales.map((locale) => (
+        <meta property="og:locale:alternate" content={locale} />
+      ))
+    }
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <title>{title}</title>
+    {
+      structuredDataItems.map((item) => (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(item)}
+        />
+      ))
+    }
     <ClientRouter />
   </head>
   <body>

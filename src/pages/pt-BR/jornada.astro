@@ -4,6 +4,34 @@ import Contact from "@components/Contact.astro";
 import Section from "@components/Section.astro";
 import CircularGallery from "@/blocks/Components/CircularGallery/CircularGallery";
 
+const siteUrl = "https://caiohenrique.vercel.app";
+
+const title = "Jornada | Caio Henrique";
+const description =
+  "História pessoal de Caio Henrique sobre resiliência, recuperação, programação autodidata e o caminho até a engenharia de software.";
+const canonicalPath = "/pt-BR/jornada";
+const alternateLocales = [
+  { hrefLang: "en", path: "/journey" },
+  { hrefLang: "pt-BR", path: "/pt-BR/jornada" },
+  { hrefLang: "x-default", path: "/journey" },
+];
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": `${siteUrl}/pt-BR/jornada#article`,
+  headline: title,
+  description,
+  url: `${siteUrl}/pt-BR/jornada`,
+  inLanguage: "pt-BR",
+  author: {
+    "@id": `${siteUrl}/#caio-henrique`,
+  },
+  publisher: {
+    "@id": `${siteUrl}/#website`,
+  },
+  mainEntityOfPage: `${siteUrl}/pt-BR/jornada`,
+};
+
 const galleryItems = [
   {
     image: "/journey/biggest-challenge-a.jpg",
@@ -28,7 +56,15 @@ const galleryItems = [
 ];
 ---
 
-<Layout title="Caio H.">
+<Layout
+  title={title}
+  description={description}
+  lang="pt-BR"
+  canonicalPath={canonicalPath}
+  alternateLocales={alternateLocales}
+  type="article"
+  structuredData={structuredData}
+>
   <div class="container">
     <Section title="Jornada" id="jornada">
       <p class="text-neutral-400 italic text-center p-4 my-8">
