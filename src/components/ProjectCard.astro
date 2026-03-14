@@ -3,7 +3,6 @@ import { FaExternalLinkSquareAlt, FaGithub } from "react-icons/fa";
 
 interface Props {
 	title: string;
-	start: string;
 	end: string;
 	description: string;
 	technologies: string[];
@@ -14,7 +13,6 @@ interface Props {
 
 const {
 	title,
-	start,
 	end,
 	description,
 	technologies,
@@ -60,7 +58,7 @@ const {
       }
     </div>
   </div>
-  <p class="mb-2 text-text/50">{start} – {end}</p>
+  <p class="mb-2 text-text/50">{end}</p>
 
   <p class="text-text/90 mb-4 text-sm">{description}</p>
 

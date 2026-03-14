@@ -103,9 +103,31 @@ import Layout from "@layouts/Layout.astro";
     <div class="min-h-screen">
       <Section id="projects" title="/projects">
         <ProjectCard
+          title="Energy Bill Extractor"
+          end="March 2026"
+          description="Full-stack monorepo that extracts structured data from energy bill PDFs with LLMs, persists processing attempts, and exposes dashboards plus documented OpenAPI/Swagger APIs."
+          technologies={[
+            "NestJS",
+            "Fastify",
+            "TypeScript",
+            "PostgreSQL",
+            "Prisma",
+            "React",
+            "Vite",
+            "Tailwind CSS",
+            "OpenAI API",
+            "OpenAPI/Swagger",
+            "pnpm",
+            "Docker",
+            "Jest",
+          ]}
+          repository="https://github.com/caiohenrqq/lumi-energy-bill-extractor"
+          website="https://lumi-energy-bill-extractor-api.vercel.app/"
+          sample={[]}
+        />
+        <ProjectCard
           title="Portfolio"
-          start="August 2025"
-          end="Present"
+          end="March 2026"
           description="My personal portfolio website, showcasing my skills, projects, and experiences as a software developer, built with <3."
           technologies={[
             "React",
@@ -126,8 +148,24 @@ import Layout from "@layouts/Layout.astro";
           ]}
         />
         <ProjectCard
+          title="Clone of Tractian Landing Page"
+          end="January 2026"
+          description="Clone of Tractian's Plant Manager landing page with responsive UI, reusable feature modules, and i18n support for localized content."
+          technologies={[
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Biome",
+            "Headless UI",
+            "Vercel",
+          ]}
+          repository="https://github.com/caiohenrqq/plant-manager-tractian-web-challenge"
+          website="https://plant-manager-tractian-web-challeng.vercel.app/en/who-we-serve/plant-manager"
+          sample={[]}
+        />
+        <ProjectCard
           title="AcademicHub"
-          start="October 2024"
           end="December 2024"
           description="Real-time chat app for university communities, allowing students to create topics, send messages, and interact in discussions"
           technologies={[

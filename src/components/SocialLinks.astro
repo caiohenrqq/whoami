@@ -1,6 +1,17 @@
 ---
 import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
+interface Props {
+	locale?: "en" | "pt-BR";
+}
+
+const { locale = "en" } = Astro.props;
+
+const cvHref =
+	locale === "pt-BR"
+		? "/cv/Caio_Henrique_Engenheiro_Full_Stack.pdf"
+		: "/cv/Caio_Henrique_Full_Stack_Engineer.pdf";
+
 const socialLinks = [
 	{
 		href: "https://github.com/caiohenrqq",
@@ -13,7 +24,7 @@ const socialLinks = [
 		icon: FaLinkedin,
 	},
 	{
-		href: "https://drive.google.com/file/d/10QEFlc6tLVQn_uRYGtOsUagD4m1INESM/view",
+		href: cvHref,
 		label: "CV",
 		icon: "CV",
 	},
